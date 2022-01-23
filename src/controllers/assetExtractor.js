@@ -39,11 +39,10 @@ const skinRenderingColor = async (req, res) =>
     const asset = new TwAssetExtractor("skin", skin)
     try {
         await asset.preprocess()
-        if (bcolor && fcolor) {
-            asset.extract("body", "foot")
-            asset.setColor(bcolor, mode, "body")
-            asset.setColor(fcolor, mode, "foot")
-        }
+        asset.extract("body", "foot", "eye")
+        asset.setColor(bcolor, mode, "eye")
+        asset.setColor(bcolor, mode, "body")
+        asset.setColor(fcolor, mode, "foot")
         asset.render(eye || "default_eye")
         asset.rCanvas.pngStream().pipe(res)
     } catch (err) {
