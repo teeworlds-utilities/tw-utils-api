@@ -40,10 +40,12 @@ const skinRenderingColor = async (req, res) =>
     try {
         await asset.preprocess()
         const renderEye = eye || "default_eye"
-        asset.extract("body", "foot", renderEye)
+        asset.extract("body", "body_shadow", "foot_shadow", "foot", renderEye)
         asset.setColor(bcolor, mode, renderEye)
         asset.setColor(bcolor, mode, "body")
+        asset.setColor(bcolor, mode, "body_shadow")
         asset.setColor(fcolor, mode, "foot")
+        asset.setColor(fcolor, mode, "foot_shadow")
         asset.render(renderEye)
         asset.rCanvas.pngStream().pipe(res)
     } catch (err) {
