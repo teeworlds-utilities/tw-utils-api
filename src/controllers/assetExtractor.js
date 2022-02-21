@@ -18,7 +18,10 @@ const skinRendering = async (req, res) =>
         asset.render(eye || "default_eye")
         asset.rCanvas.pngStream().pipe(res)
     } catch (err) {
-        res.status(500).json(err)
+        if (err.name == "InvalidFile")
+            res.status(422).json(err)
+        else
+            res.status(500).json(err)
     }
 }
 
@@ -49,7 +52,6 @@ const skinRenderingColor = async (req, res) =>
         asset.render(renderEye)
         asset.rCanvas.pngStream().pipe(res)
     } catch (err) {
-        console.log(err)
         res.status(500).json(err)
     }
 }

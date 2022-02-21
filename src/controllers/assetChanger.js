@@ -14,7 +14,6 @@ const changer = async (req, res) =>
     if (!argsChecker(req.body, "src", "dest", "elements", "type"))
         return (res.status(400).json({"error": "Missing arguments"}))
 
-    console.log(elements)
     const asset = new TwAssetChanger(type, src, dest)
     try {
         await asset.preprocess()
