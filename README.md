@@ -1,13 +1,15 @@
-# `🎡 tw-utils API`
+# tw-utils-api
 
-### Setup
+## About
 
-1. Install the dependencies 
-    - Run the bash script `install.sh` (Can request sudo)
-  
-2. Create the file `.env`  using the example `.env_example`
+A tw-utils REST API
+
+## How to build and run ?
+
+1. Get a nodeJS environment (tested with v16.11.1)
+2. Install the dependencies `npm i`
+3. Create the file .env in the repository source using the .env_example
     - Complete the fields
-
-3. Run the API
+4. Run the API
     - For production `npm run serve`
     - For dev `npm run dev`

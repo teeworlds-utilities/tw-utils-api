@@ -43,6 +43,7 @@ const skinRenderingColor = async (req, res) =>
     try {
         await asset.preprocess()
         const renderEye = eye || "default_eye"
+
         asset.extract("body", "body_shadow", "foot_shadow", "foot", renderEye)
         asset.setColor(bcolor, mode, renderEye)
         asset.setColor(bcolor, mode, "body")
