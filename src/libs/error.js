@@ -7,7 +7,7 @@ const argsChecker = (args, ...neededArgs) =>
     const keys = Object.keys(args)
 
     for (const neededArg of neededArgs) {
-        if (keys.includes(neededArg) == false) {
+        if (keys.includes(neededArg) === false) {
             return (false)
         }
     }

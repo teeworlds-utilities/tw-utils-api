@@ -18,7 +18,7 @@ const skinRendering = async (req, res) =>
         asset.render(eye || "default_eye")
         asset.rCanvas.pngStream().pipe(res)
     } catch (err) {
-        if (err.name == "InvalidFile")
+        if (err.name === "InvalidFile")
             res.status(422).json(err)
         else
             res.status(500).json(err)

@@ -11,6 +11,7 @@ const app = express()
 const notFound = require("./middlewares/not_found")
 const assetRouter = require("./routes/assetExtractor")
 const assetChanger = require("./routes/assetChanger")
+const twScene = require("./routes/twScene")
 
 // Disabling this header because attackers can see what program is used
 app.disable("x-powered-by")
@@ -20,6 +21,7 @@ app.use(bodyParser.json())
 // Routes
 app.use("/", assetRouter)
 app.use("/", assetChanger)
+app.use("/", twScene)
 
 // If unknow route
 app.use(notFound)
