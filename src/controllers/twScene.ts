@@ -4,7 +4,7 @@ import { TwSceneMaker, TwAssetExtractor } from '@b0th/tw-utils';
 
 import { argsChecker } from '../libs/error';
 
-const SCHEMESDIR = './data/scenes/schemes/';
+const SCHEMES_DIR = './data/scenes/schemes/';
 
 // Generate a scene 
 const sceneOnly = async (req: Request, res: Response) => {
@@ -19,14 +19,14 @@ const sceneOnly = async (req: Request, res: Response) => {
 
   name += '.json';
 
-  if (fs.readdirSync(SCHEMESDIR).includes(name) === false) {
+  if (fs.readdirSync(SCHEMES_DIR).includes(name) === false) {
      res.status(422).json({
       'error': 'Invalid scheme'
     });
     return;
   }
 
-  const path = SCHEMESDIR + name;
+  const path = SCHEMES_DIR + name;
   const scene = new TwSceneMaker(path);
 
   try {
@@ -55,14 +55,14 @@ const sceneRenderWithSkin = async (req: Request, res: Response) => {
 
   name += '.json';
 
-  if (fs.readdirSync(SCHEMESDIR).includes(name) === false) {
+  if (fs.readdirSync(SCHEMES_DIR).includes(name) === false) {
      res.status(422).json({
       'error': 'Invalid scheme'
     });
     return;
   }
 
-  const path = SCHEMESDIR + name;
+  const path = SCHEMES_DIR + name;
   const scene = new TwSceneMaker(path);
 
   try {

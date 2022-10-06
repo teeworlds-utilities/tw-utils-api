@@ -1,0 +1,10 @@
+GET http://localhost:3000/personalCard
+###
+GET http://localhost:3000/personalCard
+Content-Type: application/json
+
+{
+    "username": "Nagi01 {LAN}",
+    "since": "2014"
+}
+###
