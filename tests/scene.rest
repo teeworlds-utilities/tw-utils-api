@@ -1,0 +1,17 @@
+GET http://localhost:3000/sceneList
+###
+GET http://localhost:3000/scene
+Content-Type: application/json
+
+{
+    "name": "grass",
+    "skin": "https://api.skins.tw/database/skins/isnqfKDX3qeUGrcU96tMRkg3AuiXPCmXcXw7FNkp.png"
+}
+###
+GET http://localhost:3000/sceneOnly
+Content-Type: application/json
+
+{
+    "name": "grass"
+}
+###
