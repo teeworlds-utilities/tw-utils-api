@@ -11,5 +11,5 @@ A tw-utils REST API
 3. Create the file .env in the repository source using the .env_example
     - Complete the fields
 4. Run the API
-    - For production `npm run serve`
+    - For production `npm run build && npm run start`
     - For dev `npm run dev`
