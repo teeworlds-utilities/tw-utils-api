@@ -1,0 +1,8 @@
+GET http://localhost:3000/assetFix
+Content-Type: application/json
+
+{
+    "category": "skin",
+    "path": "https://api.skins.tw/database/skins/UWPs9IFpQ1I7Jfd6tNHTsRMEDJTFxeqBS0GWYB1h.png"
+}
+###

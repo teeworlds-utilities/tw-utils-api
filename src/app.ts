@@ -14,6 +14,7 @@ import assetRouter from './routes/assetExtractor';
 import assetChanger from './routes/assetChanger';
 import twScene from './routes/twScene';
 import twCard from './routes/twCard';
+import assetFix from './routes/assetFix';
 
 function main() {
   const app = express()
@@ -28,6 +29,7 @@ function main() {
     .use('/', assetChanger)
     .use('/', twScene)
     .use('/', twCard)
+    .use('/', assetFix)
 
     // If unknown route
     .use(notFound);
