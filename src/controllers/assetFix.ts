@@ -14,7 +14,7 @@ const assetFix = async (req: Request, res: Response) => {
     await asset.preprocess()
     
     asset.fix();
-    asset.canvas.createPNGStream().pipe(res);
+    asset.fixedCanvas.createPNGStream().pipe(res);
   } catch (err) {
     res.status(500).json(err);
   }
